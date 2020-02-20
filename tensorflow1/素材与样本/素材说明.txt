@@ -1,0 +1,85 @@
+11.5.3代码参考
+
+11.5.3章节提到的slim中的数据集代码，作为参考使用
+  \slim\datasets\download_and_convert_cifar10.py
+  \slim\datasets\download_and_convert_flowers.py
+————————————————————————
+实例38
+：使用卷积提取图片的轮廓
+img.jpg 代码使用的图片
+适用代码：
+8-2  sobel.py
+————————————————————————
+实例41 素材
+：显示CIFAR数据集的原始图片
+
+cifar10_input.py
+cifar10.py       这两个代码文件为书中提到的cifar库对应的代码，只是作为参考使用。与实例代码的运行无关
+————————————————————————
+实例69 素材
+：利用RNN训练语言模型
+
+将 wordstest.txt 放到代码的同级目录下即可
+适用代码：
+9-25 rnnwordtest
+————————————————————————
+实例70 素材
+：用CBOW模型训练自己的word2vec
+
+人体阴阳与电能.txt放到代码的同级目录下即可
+适用代码：
+9-26 word2vect.py
+9-27  word2vect自定义候选采样.py
+9-28  word2vect -2.py
+9-29  word2vect学习样本候选采样.py
+————————————————————————
+实例73 素材
+：预测当天股票价格 
+
+600000.csv
+适用代码：
+9-31  STOCKDATA.py
+9-32  seq2seqstock.py
+————————————————————————
+实例74 素材
+：基于seq2seq注意力模型实现中英文机器翻译
+myjiebadict.txt 为jieba分词的配置文件
+中英文平行语料库.rar 为翻译的语聊
+fanyichina为文档同步的目录结构
+适用代码：
+9-33  datautil.py
+9-34  seq2seq_model.py
+9-35  test.py
+9-36  train.py
+————————————————————————
+实例75 素材
+： dialog
+myjiebadict.txt 为jieba分词的配置文件
+datacn为文档同步的目录结构
+一起放到代码的同级目录下即可
+适用代码：
+9-37  datautil.py
+9-38  seq2seq_model.py
+9-39  test.py
+9-40  train.py
+————————————————————————
+
+实例85 素材
+：调用inception_resnet_v2模型进行图像识别
+
+hy.jpg ps.jpg 为待识别的图片，一起放到代码的同级目录下即可
+适用代码：
+11-2  inception_resnet_v2使用.py
+————————————————————————
+
+实例86 素材
+：调用vgg模型进行图像检测
+同实例85
+适用代码：
+11-3  vgg19图片检测使用.py
+
+————————————————————————
+
+
+
+
