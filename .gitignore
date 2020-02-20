@@ -1,0 +1,4 @@
+tensorboardX/.vscode
+tensorboardX/mnist
+tensorboardX/runs
+tensorboardX/all_scalars.json
