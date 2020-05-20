@@ -43,10 +43,10 @@ cells = [np.hsplit(row, 100) for row in np.vsplit(img, 50)]
 train_cells = [i[:50] for i in cells]
 test_cells = [i[50:] for i in cells]
 
-deskewed = [map(deskew, row) for row in train_cells]
+deskewed = [list(map(deskew, row)) for row in train_cells]
 # deskewed = [deskew(row) for row in train_cells]
 # deskewed = map(deskew, train_cells)
-hogdata = [map(hog, row) for row in deskewed]
+hogdata = [list(map(hog, row)) for row in deskewed]
 # hogdata = [hog(row) for row in deskewed]
 # hogdata = map(hog, deskewed)
 
@@ -61,12 +61,12 @@ svm.setGamma(5.383)
 svm.train(trainData, cv2.ml.ROW_SAMPLE, responses)
 svm.save('svm_data.dat')
 
-deskewed = [map(deskew, row) for row in test_cells]
-hogdata = [map(hog, row) for row in deskewed]
+deskewed = [list(map(deskew, row)) for row in test_cells]
+hogdata = [list(map(hog, row)) for row in deskewed]
 testData = np.float32(hogdata).reshape(-1, bin_n * 4)
 
 result = svm.predict(testData)
 mask = result == responses
 correct = np.count_nonzero(mask)
-print(correct * 100.0 / result.size)
+print((correct * 100.0 / result.size))
 # 94%

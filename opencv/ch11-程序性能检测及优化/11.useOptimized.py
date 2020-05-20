@@ -22,6 +22,6 @@ Out[8]: False
 In [9]: %timeit res = cv2.medianBlur(img,49)
 #优化后中值滤波的速度是原来的两倍
 """
-print(cv2.useOptimized())
+print((cv2.useOptimized()))
 cv2.setUseOptimized(False)
-print(cv2.useOptimized())
+print((cv2.useOptimized()))

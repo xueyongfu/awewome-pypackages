@@ -73,7 +73,7 @@ class LogTensorboard(extension.Extension):
             summary.add(observation)
         else:
             summary.add({k: observation[k] for k in keys if k in observation})
-        for k, v in observation.items():
+        for k, v in list(observation.items()):
             #self._logger.add_scalar(k, chainer.cuda.to_cpu(observation[k].data), trainer.updater.iteration)
             self._logger.add_scalar(
                 k, observation[k], trainer.updater.iteration)

@@ -32,16 +32,16 @@ def load_mnist(images, labels, num):
 
 
 def download_mnist_data():
-    print('Downloading {:s}...'.format(train_images))
+    print(('Downloading {:s}...'.format(train_images)))
     request.urlretrieve('{:s}/{:s}'.format(parent, train_images), train_images)
     print('Done')
-    print('Downloading {:s}...'.format(train_labels))
+    print(('Downloading {:s}...'.format(train_labels)))
     request.urlretrieve('{:s}/{:s}'.format(parent, train_labels), train_labels)
     print('Done')
-    print('Downloading {:s}...'.format(test_images))
+    print(('Downloading {:s}...'.format(test_images)))
     request.urlretrieve('{:s}/{:s}'.format(parent, test_images), test_images)
     print('Done')
-    print('Downloading {:s}...'.format(test_labels))
+    print(('Downloading {:s}...'.format(test_labels)))
     request.urlretrieve('{:s}/{:s}'.format(parent, test_labels), test_labels)
     print('Done')
 

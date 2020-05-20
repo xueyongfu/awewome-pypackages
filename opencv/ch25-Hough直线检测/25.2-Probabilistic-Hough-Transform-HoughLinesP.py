@@ -10,7 +10,7 @@ minLineLength = 100
 maxLineGap = 50
 
 lines = cv2.HoughLinesP(edges, 1, np.pi / 180, 100, minLineLength, maxLineGap)
-print("Len of lines:", len(lines))
+print(("Len of lines:", len(lines)))
 print(lines)
 
 for line in lines:

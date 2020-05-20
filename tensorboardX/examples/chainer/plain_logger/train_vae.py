@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """Chainer example: train a VAE on MNIST
 """
-from __future__ import print_function
+
 import argparse
 
 import matplotlib

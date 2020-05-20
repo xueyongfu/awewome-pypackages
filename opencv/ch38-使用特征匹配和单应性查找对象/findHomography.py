@@ -53,7 +53,7 @@ if len(good) > MIN_MATCH_COUNT:
     # 原图像为灰度图
     img2 = cv2.polylines(img2, [np.int32(dst)], True, 255, 3, cv2.LINE_AA)
 else:
-    print("Not enough matches are found - %d/%d" % (len(good), MIN_MATCH_COUNT))
+    print(("Not enough matches are found - %d/%d" % (len(good), MIN_MATCH_COUNT)))
     matchesMask = None
 
 # 最后我再绘制 inliers 如果能成功的找到目标图像的话  或者匹配的关  点 如果失败。

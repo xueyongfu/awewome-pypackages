@@ -34,7 +34,7 @@ def draw_cube(img, corners, imgpts):
     # draw ground floor in green
     img = cv2.drawContours(img, [imgpts[:4]], -1, (0, 255, 0), -3)
     # draw pillars in blue color
-    for i, j in zip(range(4), range(4, 8)):
+    for i, j in zip(list(range(4)), list(range(4, 8))):
         img = cv2.line(img, tuple(imgpts[i]), tuple(imgpts[j]), (255), 3)
     # draw top layer in red color
     img = cv2.drawContours(img, [imgpts[4:]], -1, (0, 0, 255), 3)

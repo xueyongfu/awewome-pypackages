@@ -30,7 +30,7 @@ def DownloadResource(url, path):
     import requests
     from six import BytesIO
     import zipfile
-    print("Downloading... {} to {}".format(url, path))
+    print(("Downloading... {} to {}".format(url, path)))
     r = requests.get(url, stream=True)
     z = zipfile.ZipFile(BytesIO(r.content))
     z.extractall(path)
@@ -44,7 +44,7 @@ db_missing = False
 
 if not os.path.exists(data_folder):
     os.makedirs(data_folder)
-    print("Your data folder was not found!! This was generated: {}".format(data_folder))
+    print(("Your data folder was not found!! This was generated: {}".format(data_folder)))
 
 # Look for existing database: lmdb
 if os.path.exists(os.path.join(data_folder, "mnist-train-nchw-lmdb")):
@@ -64,9 +64,9 @@ if db_missing:
     try:
         DownloadResource(db_url, data_folder)
     except Exception as ex:
-        print(
-            "Failed to download dataset. Please download it manually from {}".format(db_url))
-        print("Unzip it and place the two database folders here: {}".format(data_folder))
+        print((
+            "Failed to download dataset. Please download it manually from {}".format(db_url)))
+        print(("Unzip it and place the two database folders here: {}".format(data_folder)))
         raise ex
 
 if os.path.exists(root_folder):
@@ -76,8 +76,8 @@ if os.path.exists(root_folder):
 os.makedirs(root_folder)
 workspace.ResetWorkspace(root_folder)
 
-print("training data folder:" + data_folder)
-print("workspace root folder:" + root_folder)
+print(("training data folder:" + data_folder))
+print(("workspace root folder:" + root_folder))
 
 # END DATA PREPARATION #
 
@@ -228,7 +228,7 @@ with open(os.path.join(root_folder, "test_init_net.pbtxt"), 'w') as fid:
     fid.write(str(test_model.param_init_net.Proto()))
 with open(os.path.join(root_folder, "deploy_net.pbtxt"), 'w') as fid:
     fid.write(str(deploy_model.net.Proto()))
-print("Protocol buffers files have been created in your root folder: " + root_folder)
+print(("Protocol buffers files have been created in your root folder: " + root_folder))
 
 # The parameter initialization network only needs to be run once.
 workspace.RunNetOnce(train_model.param_init_net)
@@ -270,4 +270,4 @@ for i in range(100):
     tv.add_scalar('test_accuracy_raw', test_accuracy[i], i)
     tv.add_scalar('test_accuracy_blobname', 'accuracy', i)
 # After the execution is done, let's plot the values.
-print('test_accuracy: %f' % test_accuracy.mean())
+print(('test_accuracy: %f' % test_accuracy.mean()))

@@ -17,7 +17,7 @@ cap.set(4,720)
 while cap.isOpened():  
     # Capture frame-by-frame
     ret, frame = cap.read()  # ret返回一个布尔值 True/False
-    print('frame shape:',frame.shape)
+    print(('frame shape:',frame.shape))
 
     cv2.imshow("frame", frame)
 

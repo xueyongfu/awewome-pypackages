@@ -33,4 +33,4 @@ for i in range(1, 256):
 # find otsu's threshold value with OpenCV function
 ret, otsu = cv2.threshold(blur, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
-print(thresh, ret)
+print((thresh, ret))

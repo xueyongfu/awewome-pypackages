@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from __future__ import print_function
+
 
 import chainer
 import chainer.functions as F
@@ -31,7 +31,7 @@ class DCGANUpdater(chainer.training.StandardUpdater):
         gen_optimizer = self.get_optimizer('gen')
         dis_optimizer = self.get_optimizer('dis')
 
-        batch = self.get_iterator('main').next()
+        batch = next(self.get_iterator('main'))
         x_real = Variable(self.converter(batch, self.device)) / 255.
         xp = chainer.cuda.get_array_module(x_real.data)
 

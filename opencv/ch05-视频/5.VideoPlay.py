@@ -8,17 +8,17 @@ cap = cv2.VideoCapture('ch05-视频/vtest.avi')
 
 # 帧率
 fps = cap.get(cv2.CAP_PROP_FPS)  
-print("Frames per second using video.get(cv2.CAP_PROP_FPS) : {0}".format(fps))
+print(("Frames per second using video.get(cv2.CAP_PROP_FPS) : {0}".format(fps)))
 # 总共有多少帧
 num_frames = cap.get(cv2.CAP_PROP_FRAME_COUNT)
-print('共有', num_frames, '帧')
+print(('共有', num_frames, '帧'))
 
 frame_height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)
 frame_width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
-print('高：', frame_height, '宽：', frame_width)
+print(('高：', frame_height, '宽：', frame_width))
 
 FRAME_NOW = cap.get(cv2.CAP_PROP_POS_FRAMES)  # 第0帧
-print('当前帧数', FRAME_NOW)
+print(('当前帧数', FRAME_NOW))
 
 # 读取指定帧,对视频文件才有效，对摄像头无效
 frame_no = 121
@@ -27,12 +27,12 @@ ret, frame = cap.read()  # Read the frame
 cv2.imshow('frame_no'+str(frame_no), frame)
 
 FRAME_NOW = cap.get(cv2.CAP_PROP_POS_FRAMES)
-print('当前帧数', FRAME_NOW)  # 当前帧数 122.0
+print(('当前帧数', FRAME_NOW))  # 当前帧数 122.0
 
 while cap.isOpened():
     ret, frame = cap.read()
     FRAME_NOW = cap.get(cv2.CAP_PROP_POS_FRAMES)  # 当前帧数
-    print('当前帧数', FRAME_NOW)
+    print(('当前帧数', FRAME_NOW))
 
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 

@@ -19,7 +19,7 @@ edges = cv2.Canny(gray, 10, 50, apertureSize=3)
 cv2.imshow("edges", edges)
 
 lines = cv2.HoughLines(edges, 1, np.pi / 180, 200)
-print("Len of lines:", len(lines))
+print(("Len of lines:", len(lines)))
 # print lines
 
 for line in lines:
