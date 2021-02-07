@@ -2,10 +2,35 @@
 <module type="PYTHON_MODULE" version="4">
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/sklearn" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Keras" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/test" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/.vscode" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/awesome-resources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/BaiduCloud" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/data" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/flask" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/fuzzywuzzy" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/HanLP" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/imbalance_learn" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/jiagu" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Kashgari" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/Keras" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/nltk" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/opencv" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pandas" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/py2neo" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/pyltp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/python库" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sklearn" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/stanfordnlp" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/synomyns" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tensorboardX" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tensorflow1" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tensorflow2" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/torch" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/torchtext" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/transformers" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/xgboost" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/模板" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.6 (py36_torch1.2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />

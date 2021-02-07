@@ -1,0 +1,120 @@
+from sklearn.datasets import make_classification
+X, y = make_classification(n_samples=5000, n_features=2, n_informative=2,
+                           n_redundant=0, n_repeated=0, n_classes=3,
+                           n_clusters_per_class=1,
+                           weights=[0.01, 0.05, 0.94],
+                           class_sep=0.8, random_state=0)
+print('原始数据分布')
+print(sorted(Counter(y).items()))  
+
+
+# 随机过采样                        
+from imblearn.over_sampling import RandomOverSampler
+ros = RandomOverSampler(random_state=0)
+
+X_resampled, y_resampled = ros.fit_resample(X, y)
+from collections import Counter
+# 随机过采样的数据分布              
+print(sorted(Counter(y_resampled).items()))
+
+# SMOTE, ADASYN过采样
+
+from imblearn.over_sampling import SMOTE, ADASYN
+X_resampled, y_resampled = SMOTE().fit_resample(X, y)
+print(sorted(Counter(y_resampled).items()))
+
+clf_smote = LinearSVC().fit(X_resampled, y_resampled)
+X_resampled, y_resampled = ADASYN().fit_resample(X, y)
+print(sorted(Counter(y_resampled).items()))
+
+
+
+
+
+
+
+
+# Ensemble采样
+
+from sklearn.datasets import make_classification
+X, y = make_classification(n_samples=10000, n_features=2, n_informative=2,
+                           n_redundant=0, n_repeated=0, n_classes=3,
+                           n_clusters_per_class=1,
+                           weights=[0.01, 0.05, 0.94], class_sep=0.8,
+                           random_state=0)
+
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import balanced_accuracy_score
+from sklearn.ensemble import BaggingClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
+bc = BaggingClassifier(base_estimator=DecisionTreeClassifier(),
+                       random_state=0)
+bc.fit(X_train, y_train) 
+
+y_pred = bc.predict(X_test)
+balanced_accuracy_score(y_test, y_pred)  
+
+from imblearn.ensemble import BalancedBaggingClassifier
+bbc = BalancedBaggingClassifier(base_estimator=DecisionTreeClassifier(),
+                                sampling_strategy='auto',
+                                replacement=False,
+                                random_state=0)
+bbc.fit(X_train, y_train) 
+
+y_pred = bbc.predict(X_test)
+balanced_accuracy_score(y_test, y_pred)  
+
+from imblearn.ensemble import BalancedRandomForestClassifier
+brf = BalancedRandomForestClassifier(n_estimators=100, random_state=0)
+brf.fit(X_train, y_train) 
+
+y_pred = brf.predict(X_test)
+balanced_accuracy_score(y_test, y_pred)  
+
+from imblearn.ensemble import RUSBoostClassifier
+rusboost = RUSBoostClassifier(n_estimators=200, algorithm='SAMME.R',
+                              random_state=0)
+rusboost.fit(X_train, y_train)  
+
+y_pred = rusboost.predict(X_test)
+balanced_accuracy_score(y_test, y_pred)  
+
+
+
+
+
+
+
+# 定制采样器
+
+import numpy as np
+from imblearn import FunctionSampler
+from sklearn.datasets import make_classification
+X, y = make_classification(n_samples=5000, n_features=2, n_informative=2,
+                           n_redundant=0, n_repeated=0, n_classes=3,
+                           n_clusters_per_class=1,
+                           weights=[0.01, 0.05, 0.94],
+                           class_sep=0.8, random_state=0)
+
+def func(X, y):
+  return X[:10], y[:10]
+  
+sampler = FunctionSampler(func=func)
+X_res, y_res = sampler.fit_resample(X, y)
+np.all(X_res == X[:10])
+
+np.all(y_res == y[:10])
+
+
+
+
+
+
+
+
+
+
+
+

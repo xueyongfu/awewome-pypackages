@@ -1,0 +1,47 @@
+from stanfordcorenlp import StanfordCoreNLP
+nlp=StanfordCoreNLP('/home/xyf/models/stanfordnlp',lang='zh')
+
+# 基本使用方法
+
+sentence ='清华大学位于北京。'
+
+print(nlp.word_tokenize(sentence))
+
+print(nlp.pos_tag(sentence))
+
+print(nlp.ner(sentence))
+
+print(nlp.parse(sentence))
+
+print(nlp.dependency_parse(sentence))
+
+
+# 可视化
+
+from nltk.tree import  Tree
+sentence ='近日，一条男子高铁吃泡面被女乘客怒怼的视频引发热议'
+
+tree=Tree.fromstring(nlp.parse(sentence))
+tree.draw()
+
+sent = '浦东新区上南路金谊路喜地农贸市场发生了火灾'
+print(nlp.ner(sent))
+
+sent = '近日，一条男子高铁吃泡面被女乘客怒怼的视频引发热议'
+print(nlp.ner(sent))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

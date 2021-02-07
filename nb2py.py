@@ -23,12 +23,13 @@ def ipynb_to_py(ipynb_file, py_ext='.py'):
 
 if __name__ == '__main__':
     # 这里填写要转换文件夹目录
-    filepath = '/home/xyf/桌面/awewome-pypackages/torch'
+    filepath = '/home/xyf/桌面/cluster-pools/text_clustering/auto-k-means'
     extensionName = 'ipynb'
     ipynb_file_list = getExtfileList(filepath, extensionName)
     file_count = len(ipynb_file_list)
     for index, ipynb_file in enumerate(ipynb_file_list):
         print('正在转换第%s/%s个文件:%s' % (index + 1, file_count, ipynb_file))
         ipynb_to_py(ipynb_file)
+        # os.remove(ipynb_file)
     print('全部.ipynb文件转换完成！')
 
